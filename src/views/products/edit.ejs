@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %>
+<body>
+    <%- include('../partials/header.ejs') %>
+    <br>
+    <br>
+    <br>
+    
+    <form action="/product/edit/<%= movie.id %>?_method=put" method="post">
+        Titulo:
+        <textarea name="title" cols="30" rows="4"><%= movie.title %>
+        </textarea><br><br>
+        Rating:<input type="number" name="rating" value="<%= movie.rating %>"><br><br>
+        Premios:<input type="number" name="awards" value="<%= movie.awards %>"><br><br>
+        Duracion:<input type="number" name="length" value="<%= movie.length %>"><br><br>
+        Lanzamiento:<input type="datetime-local" name="release_date" value="<%= movie.release_date %>"><br><br>
+        
+        
+
+        <button type="submit">Editar</button>
+    </form>
+
+</body>
+</html>

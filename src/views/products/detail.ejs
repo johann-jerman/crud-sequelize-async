@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %>
+<body>
+    <%- include('../partials/header.ejs') %>
+    <br>
+    <br>
+    <br>
+    
+
+        <div>
+            <a href="/product/<%= movie.id %>"><%= movie.title %></a>
+        </div>
+
+        <p>Rating:<%= movie.rating %></p>
+        <p>Premios:<%= movie.awards %></p>
+        <p>Duracion:<%= movie.length %></p>
+        <p>Fechas de lanzamiento:<%= movie.release_date %></p>
+        <p>Genero:<%= movie.genre.name %></p>
+
+        <br><br>
+
+        <button>
+            <a href="/product/edit/<%= movie.id %>">Editar</a>
+        </button>
+
+        <br><br>
+        
+        <form action="/product/delete/<%= movie.id %>?_method=delete" method="post">
+            <button type="submit">Eliminar</button>
+        </form>
+
+
+
+</body>
+</html>

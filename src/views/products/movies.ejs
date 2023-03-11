@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %>
+<body>
+    <%- include('../partials/header.ejs') %>
+    <br>
+    <br>
+    <br>
+    
+    <% movie.forEach(movie => { %>
+
+        <div>
+            <a href="/product/<%= movie.id %>"><%= movie.title %></a>
+        </div>
+
+        <p>Rating:<%= movie.rating %></p>
+        <p>Premios:<%= movie.awards %></p>
+        <p>Duracion:<%= movie.length %></p>
+        <p>Fechas de lanzamiento:<%= movie.release_date %></p>
+       
+       
+
+        <br>
+        <br>
+
+    <% }) %>
+
+</body>
+</html>

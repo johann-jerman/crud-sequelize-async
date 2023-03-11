@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %>
+<body>
+    <%- include('../partials/header.ejs') %>
+    <br>
+    <br>
+    <br>
+    
+    <form action="/product/create" method="post">
+        Titulo:
+        <textarea name="title" cols="30" rows="4">
+        </textarea><br><br>
+        Rating:<input type="number" name="rating" ><br><br>
+        Premios:<input type="number" name="awards" ><br><br>
+        Duracion:<input type="number" name="length" ><br><br>
+        Lanzamiento:<input type="datetime-local" name="release_date" ><br><br>
+        <select name="genre_id" id="">
+            <% genre.forEach(gen => { %>
+                <option value="gen.id"><%= gen.name %></option>
+            <% }) %>
+        </select><br><br>
+
+        <button type="submit">Editar</button>
+    </form>
+
+</body>
+</html>
