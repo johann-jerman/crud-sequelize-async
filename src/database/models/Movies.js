@@ -1,4 +1,4 @@
-const { movies } = require("../../controller/productController");
+'use strict';
 
 module.exports = (sequelize, DataType) => {
     
@@ -37,7 +37,10 @@ module.exports = (sequelize, DataType) => {
         {
             tablename: 'movies',
             timestamps: true,
-            underscored: true
+            underscored: true,
+            created_at: 'created_at',
+            updated_at: 'updated_at',
+            paranoid: true
         }
     );
 

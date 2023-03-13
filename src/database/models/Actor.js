@@ -6,7 +6,7 @@ module.exports = (sequelize, DataType) => {
                 primaryKey: true,
                 autoIncrement: true
             },
-            firs_name: {
+            first_name: {
                 type: DataType.STRING(100),
                 allowNull: false
             },
@@ -19,9 +19,8 @@ module.exports = (sequelize, DataType) => {
                 allowNull: true
             },
             favorite_movie_id: {
-                type: DataType.INTEGER.UNSIGNED,
-                allowNull: true
-                
+                type: DataType.BIGINT(10).UNSIGNED,
+                allowNull: true   
             }
         },
         {
@@ -42,3 +41,4 @@ module.exports = (sequelize, DataType) => {
 
     return Actor
 }
+

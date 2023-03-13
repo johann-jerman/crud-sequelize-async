@@ -13,6 +13,9 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.set('views', path.resolve(__dirname, 'views'));
 
+app.use(express.urlencoded({extended: true}))
+app.use(express.json())
+
 app.use(methodOverride('_method'));
 
 app.use(mainRoutes);

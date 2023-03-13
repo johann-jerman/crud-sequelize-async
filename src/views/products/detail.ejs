@@ -8,15 +8,24 @@
     <br>
     
 
-        <div>
+        <h1>
             <a href="/product/<%= movie.id %>"><%= movie.title %></a>
-        </div>
+        </h1>
 
         <p>Rating:<%= movie.rating %></p>
         <p>Premios:<%= movie.awards %></p>
         <p>Duracion:<%= movie.length %></p>
         <p>Fechas de lanzamiento:<%= movie.release_date %></p>
-        <p>Genero:<%= movie.genre.name %></p>
+        <% if (movie.genre) { %>
+            <h1>Genero:<%= movie.genre.name %></h1>
+        <% } %>
+        <% if (!movie.genre) { %>
+            <p>No tiene genero</p>
+        <% } %>
+        <h1>Actores:</h1>
+        <% movie.actor.forEach(actor => { %>
+         <p><%= actor.first_name %> <%= actor.last_name %></p>
+        <% }) %>
 
         <br><br>
 

@@ -9,17 +9,25 @@
     
     <% movie.forEach(movie => { %>
 
-        <div>
+        <h1>
             <a href="/product/<%= movie.id %>"><%= movie.title %></a>
-        </div>
+        </h1>
 
         <p>Rating:<%= movie.rating %></p>
         <p>Premios:<%= movie.awards %></p>
         <p>Duracion:<%= movie.length %></p>
         <p>Fechas de lanzamiento:<%= movie.release_date %></p>
-       
-       
-
+        <h6>Genero:</h6>
+        <% if (movie.genre) { %>
+            <p><%= movie.genre.name %></p>
+        <% } %>
+        <% if (!movie.genre) { %>
+            <p>No tiene genero</p>
+        <% } %>
+        <h6>Actores:</h6>
+        <% movie.actor.forEach(actor => { %>
+         <p><%= actor.first_name %> <%= actor.last_name %></p>
+        <% }) %>
         <br>
         <br>
 
